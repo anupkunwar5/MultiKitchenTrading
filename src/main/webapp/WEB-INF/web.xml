@@ -16,6 +16,7 @@
   <servlet-mapping>
     <servlet-name>default</servlet-name>
     <url-pattern>/css/*</url-pattern>
+    <url-pattern>/CSS/*</url-pattern>
     <url-pattern>/resources/*</url-pattern>
     <url-pattern>/images/*</url-pattern>
   </servlet-mapping>
