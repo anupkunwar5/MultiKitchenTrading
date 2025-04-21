@@ -15,7 +15,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-@WebServlet(asyncSupported = true, urlPatterns = { "/login", "/" })
+@WebServlet(asyncSupported = true, urlPatterns = { "/login"})
 public class loginController extends HttpServlet {
     private static final long serialVersionUID = 1L;
 

@@ -16,7 +16,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-@WebServlet(asyncSupported = true, urlPatterns = { "/register" ,"/" })
+@WebServlet(asyncSupported = true, urlPatterns = { "/register"})
 @MultipartConfig(
     fileSizeThreshold = 1024 * 1024 * 2,  // 2MB
     maxFileSize = 1024 * 1024 * 10,       // 10MB
