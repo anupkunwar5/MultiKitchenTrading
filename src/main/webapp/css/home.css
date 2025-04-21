@@ -1,0 +1,121 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #fdfdff;
+    color: #333;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to right, #b3e5fc, #e1f5fe);
+    padding: 100px 20px;
+    text-align: center;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    color: #004d99;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    color: #003d66;
+    margin-bottom: 30px;
+}
+
+.hero-buttons .btn {
+    padding: 12px 28px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn.primary {
+    background-color: #007acc;
+    color: white;
+}
+
+.btn.primary:hover {
+    background-color: #005fa3;
+}
+
+.btn.secondary {
+    background-color: transparent;
+    color: #007acc;
+    border: 2px solid #007acc;
+}
+
+.btn.secondary:hover {
+    background-color: #cceeff;
+}
+
+/* Features Section */
+.features {
+    padding: 60px 30px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 36px;
+    color: #004d99;
+    margin-bottom: 40px;
+}
+
+.feature-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.feature-card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 25px;
+    width: 280px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card h3 {
+    color: #007acc;
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.feature-card p {
+    font-size: 16px;
+    color: #444;
+}
+
+/* About Section */
+.about {
+    background: #f3faff;
+    padding: 60px 30px;
+    text-align: center;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+}
+
+.about h2 {
+    font-size: 32px;
+    color: #005a9e;
+    margin-bottom: 15px;
+}
+
+.about p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #444;
+}

@@ -1,0 +1,114 @@
+@charset "UTF-8";
+*{
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fef7f2;
+  color: #333;
+}
+
+.container {
+  width: 95%;
+  max-width: 1400px;
+  margin: auto;
+  padding: 40px 0;
+}
+
+header {
+  background-color: #1f3b6f;
+  color: #ffffff;
+  text-align: center;
+  padding: 60px 20px;
+  border-bottom: 5px solid #833f11;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.team-container {
+  margin: 40px auto;
+  padding: 40px;
+  max-width: 90%;
+  background-color: #fff7ef;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.team-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.profile-card {
+  flex: 1 1 18%;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+  padding: 25px 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 220px;
+}
+
+.profile-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+.profile-card img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid #a95c1e;
+}
+
+.profile-card h2 {
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+
+.profile-card .role {
+  font-size: 1rem;
+  color: #a95c1e;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.profile-card p {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  text-decoration: none;
+  color: #a95c1e;
+  font-size: 1.2rem;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #333;
+}
