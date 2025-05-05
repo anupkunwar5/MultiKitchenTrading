@@ -2,7 +2,7 @@
 <jsp:include page="header.jsp" />
 <html>
 <head>
-    <title>Home | MultiKitchenTrading</title>
+    <title>Home | MySite</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/home.css">
 </head>
 <body>
