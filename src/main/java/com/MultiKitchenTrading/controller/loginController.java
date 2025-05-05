@@ -28,10 +28,10 @@ import java.sql.ResultSet;
  */
 @SuppressWarnings("unused")
 @WebServlet(asyncSupported = true, urlPatterns = { "/login" })
-public class LoginController extends HttpServlet {
+public class loginController extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    public LoginController() {
+    public loginController() {
         super();
     }
 

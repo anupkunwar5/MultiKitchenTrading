@@ -5,7 +5,7 @@
 </head>
 <body>
     <div class="navbar">
-        <div class="logo">MySite</div>
+        <div class="logo">MultiKitchenTrading</div>
         <ul class="nav-links">
             <li><a href="${pageContext.request.contextPath}/home">Home</a></li>
             <li><a href="${pageContext.request.contextPath}/contact">Contact Us</a></li>

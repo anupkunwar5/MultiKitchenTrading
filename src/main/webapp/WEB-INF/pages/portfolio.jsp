@@ -9,6 +9,24 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/portfolio.css" />
 </head>
 <body>
+ <section class="about" id="about">
+        <div class="main">
+            <div id="parent">
+            <div class="about_animation">
+                <h1>Multi Kitchen Trading</h1>
+            
+            </div>
+            <div class="back" style={}>
+            </div>
+            </div>
+            
+            
+            <div class="about_text">
+                <h1>About us</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas dicta odio voluptate beatae quibusdam explicabo similique nostrum perspiciatis enim corrupti expedita mollitia molestiae laborum delectus, tempora modi, accusantium, quaerat pariatur!Lorem</p>
+            </div>
+        </div>
+    </section>
 	<header>
     <h1>Meet Our Team</h1>
     <p>Talented professionals building amazing things together.</p>
