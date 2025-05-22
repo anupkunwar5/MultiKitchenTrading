@@ -24,6 +24,7 @@ public class AdminFilter implements Filter {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
         HttpSession session = request.getSession(false);
+        
 
         if (session != null) {
             User user = (User) session.getAttribute("user");

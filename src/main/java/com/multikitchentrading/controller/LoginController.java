@@ -46,7 +46,11 @@ public class LoginController extends HttpServlet {
                 CookieUtils.addCookie(response, "username", user.getUsername(), oneDay);
                 CookieUtils.addCookie(response, "firstName", user.getFirstName(), oneDay);
                 CookieUtils.addCookie(response, "email", user.getEmail(), oneDay);
+                if (user.isAdmin()) {
+                    response.sendRedirect("/multikitchentrading/admin/dashboard");
+                    return;
 
+                }
                 response.sendRedirect("home");
             } else {
                 request.setAttribute("errorMessage", "Invalid username or password");

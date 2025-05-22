@@ -194,4 +194,25 @@ public class ProductService {
         
         return products;
     }
+    public List<Product> getRelatedProducts(int categoryId, int excludeProductId, int limit) throws SQLException {
+        List<Product> relatedProducts = new ArrayList<>();
+        String sql = "SELECT * FROM products WHERE is_active = true AND category_id = ? AND product_id != ? ORDER BY RAND() LIMIT ?";
+
+        try (Connection conn = DBUtils.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setInt(1, categoryId);
+            stmt.setInt(2, excludeProductId);
+            stmt.setInt(3, limit);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    relatedProducts.add(mapResultSetToProduct(rs));
+                }
+            }
+        }
+
+        return relatedProducts;
+    }
+
 }

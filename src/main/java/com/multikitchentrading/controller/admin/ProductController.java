@@ -40,7 +40,7 @@ public class ProductController extends HttpServlet {
     // IMPORTANT: Ensure this path is correct for your server environment.
     // This should ideally be outside the webapp deployment directory if possible for security and persistence,
     // but for development, inside webapp/uploads is common.
-	private static final String FILE_SYSTEM_BASE_WEBAPP_DIR = "/Users/anupkunwar/Documents/2year-sem2/Final Submission year 2 Sem 2/multikitchentrading/src/main/webapp/uploads/product";
+    private static final String FILE_SYSTEM_BASE_WEBAPP_DIR = "G:\\EclipsServlets\\multikitchentrading\\src\\main\\webapp";
 
     // Subdirectory within the base for all uploads
     private static final String UPLOADS_SUBDIR = "uploads";

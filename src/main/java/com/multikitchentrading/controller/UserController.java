@@ -12,6 +12,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.Part;
+
+import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -22,6 +24,8 @@ import java.sql.SQLException;
     maxRequestSize = 10 * 1024 * 1024 // 10 MB
 )
 public class UserController extends HttpServlet {
+	private static final String FILE_SYSTEM_BASE_WEBAPP_DIR = "/Users/anupkunwar/Documents/2year-sem2/Final Submission year 2 Sem 2/multikitchentrading/src/main/webapp/uploads/profiles";
+
     private UserService userService = new UserService();
     
     @Override
@@ -83,12 +87,27 @@ public class UserController extends HttpServlet {
             String profileImagePath = user.getProfileImage(); // Default to existing image
             
             try {
-                Part filePart = request.getPart("profileImage");
-                if (filePart != null && filePart.getSize() > 0) {
-                    String uploadDir = getServletContext().getRealPath("/uploads/profiles");
-                    String fileExtension = ImageUtils.getFileExtension(filePart.getSubmittedFileName());
-                    profileImagePath = ImageUtils.saveProfileImage(filePart.getInputStream(), uploadDir, fileExtension, user.getUserId());
-                }
+
+            	Part filePart = request.getPart("profileImage");
+            	if (filePart != null && filePart.getSize() > 0) {
+            	    // Define upload directory using fixed path
+            	    String uploadDir = FILE_SYSTEM_BASE_WEBAPP_DIR + File.separator + "uploads" + File.separator + "user";
+            	    
+            	    // Ensure the upload directory exists
+            	    File dir = new File(uploadDir);
+            	    if (!dir.exists()) {
+            	        dir.mkdirs();
+            	    }
+
+            	    // Get file extension
+            	    String fileExtension = ImageUtils.getFileExtension(filePart.getSubmittedFileName());
+            	    
+            	    // Save image and get path
+            	    profileImagePath = ImageUtils.saveProfileImage(
+            	        filePart.getInputStream(), uploadDir, fileExtension, user.getUserId()
+            	    );
+            	}
+
                 
                 // Update user in database
                 boolean success = userService.updateUser(

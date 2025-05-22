@@ -2,18 +2,22 @@ package com.multikitchentrading.controller;
 
 import com.multikitchentrading.services.UserService;
 import com.multikitchentrading.utils.ImageUtils;
+import com.multikitchentrading.utils.PasswordUtils;
 import com.multikitchentrading.utils.ValidationUtils;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
 @WebServlet("/signup")
 @MultipartConfig // Required for file upload
 public class SignupController extends HttpServlet {
+    private static final String FILE_SYSTEM_BASE_WEBAPP_DIR = "G:\\EclipsServlets\\multikitchentrading\\src\\main\\webapp";
+
     private UserService userService = new UserService();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -37,10 +41,20 @@ public class SignupController extends HttpServlet {
         Part imagePart = request.getPart("profileImage");
         String profileImagePath = null;
 
+
         if (imagePart != null && imagePart.getSize() > 0) {
             InputStream imageStream = imagePart.getInputStream();
             String extension = ImageUtils.getFileExtension(imagePart.getSubmittedFileName());
-            String uploadDir = getServletContext().getRealPath("/") + "uploads/user/";
+            
+            // Use fixed directory path instead of getServletContext()
+            String uploadDir = FILE_SYSTEM_BASE_WEBAPP_DIR + File.separator + "uploads" + File.separator + "user" + File.separator;
+            
+            // Make sure the directory exists
+            File uploadDirectory = new File(uploadDir);
+            if (!uploadDirectory.exists()) {
+                uploadDirectory.mkdirs();
+            }
+
             profileImagePath = ImageUtils.saveProfileImage(imageStream, uploadDir, extension);
         }
 
@@ -52,7 +66,9 @@ public class SignupController extends HttpServlet {
         }
 
         try {
-            if (userService.createUser(username, password, email, firstName, lastName, phone, address, profileImagePath)) {
+        	String encryptedPassword = PasswordUtils.encrypt(username, password);
+
+            if (userService.createUser(username, encryptedPassword, email, firstName, lastName, phone, address, profileImagePath)) {
                 request.setAttribute("successMessage", "Registration successful! Please login.");
                 request.getRequestDispatcher("WEB-INF/pages/login.jsp").forward(request, response);
             } else {

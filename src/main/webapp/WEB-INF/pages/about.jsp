@@ -309,18 +309,19 @@
 
     <main>
         <!-- ABOUT US HERO SECTION -->
-        <section class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://via.placeholder.com/1600x450/4caf50/FFFFFF?text=About+MultiKitchenTrading'); min-height: 35vh;">
-            <div class="hero-content">
-                <h1>About MultiKitchenTrading</h1>
-                <p>Your Trusted Partner for Perfect Poultry Preparation.</p>
-            </div>
-        </section>
+        <section class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/multikitchentrading/uploads/images/homepage.jpg'); min-height: 35vh;">
+		    <div class="hero-content">
+		        <h1>About MultiKitchenTrading</h1>
+		        <p>Your Trusted Partner for Perfect Poultry Preparation.</p>
+		    </div>
+		</section>
+
 
         <!-- OUR STORY SECTION -->
         <section class="featured-section">
             <div class="container">
                 <div class="text-center"><h2 class="section-title">Our Story</h2></div>
-                <div class="our-story-content"> {/* Changed from inline style to class */}
+                <div class="our-story-content"> 
                     <p>Founded by a group of passionate home cooks and chicken enthusiasts, MultiKitchenTrading was born out of a simple desire: to make cooking delicious chicken accessible to everyone. We noticed a gap in the market for high-quality, specialized chicken appliances that weren't just functional but also innovative and reliable.</p>
                     <p>From humble beginnings, sourcing the best rotisseries, to expanding our range to include state-of-the-art air fryers, smokers, and grills, our journey has been fueled by our customers' love for perfectly cooked chicken. We believe that the right tools can transform an ordinary meal into an extraordinary culinary experience.</p>
                 </div>
@@ -328,11 +329,11 @@
         </section>
 
         <!-- OUR MISSION & VALUES SECTION -->
-        <section class="featured-section" style="background-color: var(--primary-pale);"> {/* Kept specific bg inline, or use a dedicated class */}
+        <section class="featured-section" style="background-color: var(--primary-pale);"> 
             <div class="container">
                 <div class="text-center"><h2 class="section-title">Our Mission & Values</h2></div>
-                <div class="grid-layout" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;"> {/* Inline grid columns for this specific layout */}
-                    <div class="card" style="border-top-color: var(--accent-gold);"> {/* Inline border color for cards in this section */}
+                <div class="grid-layout" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;"> 
+                    <div class="card" style="border-top-color: var(--accent-gold);"> 
                         <div class="card-info">
                             <i class="fas fa-bullseye" style="color: var(--primary-green); margin-bottom: 15px; font-size: 3em;"></i>
                             <h3>Our Mission</h3>
@@ -418,8 +419,8 @@
                 </div>
                 <div class="footer-section contact-info">
                     <h4>Contact Us</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Poultry Lane, Kitchenville, USA</p>
-                    <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+                    <p><i class="fas fa-map-marker-alt"></i>Sano Bharayng, Swayambhu Ring Road, Kathmandu</p>
+                    <p><i class="fas fa-phone"></i> +977 9817014931</p>
                     <p><i class="fas fa-envelope"></i> sales@multikitchentrading.com</p>
                 </div>
             </div>

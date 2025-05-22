@@ -77,7 +77,7 @@ h1, h2, h3 {
 /* --- Hero Section --- */
 .hero {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                url('https://via.placeholder.com/1600x650/2e7d32/FFFFFF?text=Perfect+Chicken+Every+Time') no-repeat center center/cover;
+                url('/multikitchentrading/uploads/images/homepage.jpg') no-repeat center center/cover;
     color: white;
     text-align: center;
     padding: 100px 20px;

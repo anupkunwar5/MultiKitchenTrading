@@ -222,7 +222,7 @@
                                         <td><%= product.getProductId() %></td>
                                         <td>
                                             <% if (product.getImageUrl() != null && !product.getImageUrl().isEmpty()) { %>
-                                                <img src="<%= product.getImageUrl() %>" alt="Product image" class="product-thumb">
+                                                <img src="/multikitchentrading/<%= product.getImageUrl() %>" alt="Product image" class="product-thumb">
                                             <% } else { %>
                                                 <div class="text-muted">No image</div>
                                             <% } %>

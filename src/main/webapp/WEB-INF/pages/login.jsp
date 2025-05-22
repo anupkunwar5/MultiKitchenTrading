@@ -84,8 +84,8 @@
         </form>
 
         <div class="mt-3 text-center">
-    		Don't have an account? <a href="${pageContext.request.contextPath}/signup">Sign up</a>
-		</div>
+            Don't have an account? <a href="signup">Sign up</a>
+        </div>
     </div>
 </div>
 </body>

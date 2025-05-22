@@ -2,10 +2,14 @@ package com.multikitchentrading.services;
 
 import com.multikitchentrading.models.User;
 import com.multikitchentrading.utils.DBUtils;
+import com.multikitchentrading.utils.PasswordUtils;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserService {
 	public User getUserByUsername(String username) throws SQLException {
@@ -25,34 +29,49 @@ public class UserService {
 	                user.setAddress(rs.getString("address"));
 	                user.setCreatedAt(rs.getTimestamp("created_at"));
 	                user.setAdmin(rs.getBoolean("is_admin"));
+	                user.setImagePath(rs.getString("profile_image"));
 	                return user;
 	            }
 	        }
 	    }
 	    return null;
 	}
-    public boolean authenticateUser(String username, String password) throws SQLException {
-        Connection conn = null;
-        PreparedStatement stmt = null;
-        ResultSet rs = null;
-        
-        try {
-            conn = DBUtils.getConnection();
-            String query = "SELECT password FROM users WHERE username = ?";
-            stmt = conn.prepareStatement(query);
-            stmt.setString(1, username);
-            rs = stmt.executeQuery();
-            
-            if (rs.next()) {
-                String storedPassword = rs.getString("password");
-                // In real application, use password hashing like BCrypt
-                return storedPassword.equals(password);
-            }
-            return false;
-        } finally {
-            DBUtils.closeAll(conn, stmt, rs);
-        }
-    }
+	public boolean authenticateUser(String username, String inputPassword) throws SQLException {
+	    String query = "SELECT password FROM users WHERE username = ?";
+	    try (Connection conn = DBUtils.getConnection();
+	         PreparedStatement stmt = conn.prepareStatement(query)) {
+
+	        stmt.setString(1, username);
+	        ResultSet rs = stmt.executeQuery();
+
+	        if (rs.next()) {
+	            String encryptedPassword = rs.getString("password");
+
+	            // Decrypt the password using the same method and username
+	            String decryptedPassword = PasswordUtils.decrypt(encryptedPassword, username);
+
+	            // Compare the decrypted password with the login form input
+	            return inputPassword.equals(decryptedPassword);
+	        }
+	    }
+	    return false;
+	}
+
+	/*
+	 * public boolean authenticateUser(String username, String password) throws
+	 * SQLException { Connection conn = null; PreparedStatement stmt = null;
+	 * ResultSet rs = null;
+	 * 
+	 * try { conn = DBUtils.getConnection(); String query =
+	 * "SELECT password FROM users WHERE username = ?"; stmt =
+	 * conn.prepareStatement(query); stmt.setString(1, username); rs =
+	 * stmt.executeQuery();
+	 * 
+	 * if (rs.next()) { String storedPassword = rs.getString("password"); // In real
+	 * application, use password hashing like BCrypt return
+	 * storedPassword.equals(password); } return false; } finally {
+	 * DBUtils.closeAll(conn, stmt, rs); } }
+	 */
     
     public String getUserRole(String username) throws SQLException {
         Connection conn = null;
@@ -120,6 +139,45 @@ int rowsUpdated = stmt.executeUpdate();
 return rowsUpdated > 0;
 }
 }
+    // ✅ DELETE USER BY ID
+    public boolean deleteUser(int userId) throws SQLException {
+        String query = "DELETE FROM users WHERE user_id = ?";
+        try (Connection conn = DBUtils.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+
+            stmt.setInt(1, userId);
+            int rowsDeleted = stmt.executeUpdate();
+            return rowsDeleted > 0;
+        }
+    }
+
+    // ✅ GET ALL USERS
+    public List<User> getAllUsers() throws SQLException {
+        List<User> userList = new ArrayList<>();
+        String query = "SELECT * FROM users ORDER BY created_at DESC";
+
+        try (Connection conn = DBUtils.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query);
+             ResultSet rs = stmt.executeQuery()) {
+
+            while (rs.next()) {
+                User user = new User();
+                user.setUserId(rs.getInt("user_id"));
+                user.setUsername(rs.getString("username"));
+                user.setEmail(rs.getString("email"));
+                user.setFirstName(rs.getString("first_name"));
+                user.setLastName(rs.getString("last_name"));
+                user.setPhone(rs.getString("phone"));
+                user.setAddress(rs.getString("address"));
+                user.setCreatedAt(rs.getTimestamp("created_at"));
+                user.setAdmin(rs.getBoolean("is_admin"));
+                user.setImagePath(rs.getString("profile_image"));
+                userList.add(user);
+            }
+        }
+
+        return userList;
+    }
     
 
 }

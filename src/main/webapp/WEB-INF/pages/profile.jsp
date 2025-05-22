@@ -81,8 +81,8 @@
         <% if (user != null) { %>
             <div class="profile-container">
                 <div class="profile-header">
-                    <img src="<%= user.getProfileImage() == null || user.getProfileImage().isEmpty() ? 
-                                "/assets/images/default-profile.jpg" : user.getProfileImage() %>" 
+                    <img src="<%= user.getImagePath() == null || user.getImagePath().isEmpty() ? 
+                                "/uploads/images/default-profile.jpg" : "/multikitchentrading/"+user.getImagePath() %>" 
                          alt="Profile Picture" class="profile-image">
                     <div>
                         <h2 class="profile-name"><%= user.getFirstName() %> <%= user.getLastName() %></h2>

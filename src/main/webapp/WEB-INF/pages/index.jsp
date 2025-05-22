@@ -12,14 +12,13 @@
     <!-- HEADER would be included via JSP include -->
      <jsp:include page="header.jsp" />
 
-    <img src="<%= request.getContextPath() %>/uploads/product/product__80030cbc-a320-482b-94e0-f4c4a949641f.jpg" alt="hiiiiii"/>
 
     <!-- HERO SECTION -->
     <section class="hero">
         <div class="hero-content">
             <h1>Perfect Chicken, Every Time!</h1>
             <p>Discover premium appliances designed for the ultimate chicken cooking experience.</p>
-            <a href="products.html" class="btn">Shop Our Appliances</a>
+            <a href="${pageContext.request.contextPath}/products" class="btn">Shop Our Appliances</a>
         </div>
     </section>
 
@@ -29,23 +28,23 @@
             <h2 class="section-title">Shop by Category</h2>
             <div class="category-grid">
                 <div class="category-card">
-                    <img src="https://via.placeholder.com/300x200/e8f5e9/2e7d32?text=Rotisseries" alt="Rotisseries">
+                    <img src="/multikitchentrading/uploads/images/1.jpeg" alt="Rotisseries">
                     <div class="category-info">
                         <h3>Rotisseries</h3>
                         <p>For evenly cooked, succulent chicken with perfect browning every time.</p>
-                        <a href="category-rotisseries.html" class="btn btn-secondary">View Rotisseries</a>
+                        <a href="${pageContext.request.contextPath}/products" class="btn btn-secondary">View Rotisseries</a>
                     </div>
                 </div>
                 <div class="category-card">
-                    <img src="https://via.placeholder.com/300x200/e8f5e9/2e7d32?text=Air+Fryers" alt="Air Fryers">
+                    <img src="/multikitchentrading/uploads/images/3.jpeg" alt="Air Fryers">
                     <div class="category-info">
                         <h3>Air Fryers</h3>
                         <p>Crispy chicken with less oil and healthier results. Perfect for modern kitchens.</p>
-                        <a href="category-airfryers.html" class="btn btn-secondary">View Air Fryers</a>
+                        <a href="${pageContext.request.contextPath}/products" class="btn btn-secondary">View Air Fryers</a>
                     </div>
                 </div>
                 <div class="category-card">
-                    <img src="https://via.placeholder.com/300x200/e8f5e9/2e7d32?text=Grills+&+Smokers" alt="Grills & Smokers">
+                    <img src="/multikitchentrading/uploads/images/4.jpeg" alt="Grills & Smokers">
                     <div class="category-info">
                         <h3>Grills & Smokers</h3>
                         <p>Authentic smoky flavor for your chicken. Bring outdoor cooking perfection home.</p>
@@ -53,7 +52,7 @@
                     </div>
                 </div>
                 <div class="category-card">
-                    <img src="https://via.placeholder.com/300x200/e8f5e9/2e7d32?text=Deep+Fryers" alt="Deep Fryers">
+                    <img src="/multikitchentrading/uploads/images/2.jpeg" alt="Deep Fryers">
                     <div class="category-info">
                         <h3>Deep Fryers</h3>
                         <p>For classic fried chicken perfection with crispy exterior and juicy interior.</p>
@@ -70,35 +69,35 @@
             <h2 class="section-title">Our Bestsellers</h2>
             <div class="product-grid">
                 <div class="product-card">
-                    <img src="https://via.placeholder.com/300x200/e8f5e9/2e7d32?text=Pro+Chicken+Rotisserie+X500" alt="Pro Chicken Rotisserie X500">
+                    <img src="/multikitchentrading/uploads/images/1.jpeg" alt="Pro Chicken Rotisserie X500">
                     <div class="product-info">
                         <h3>Pro Chicken Rotisserie X500</h3>
                         <p class="product-price">$199.99</p>
-                        <a href="#" class="btn">View Details</a>
+                        <a href="${pageContext.request.contextPath}/products" class="btn">View Details</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <img src="https://via.placeholder.com/300x200/e8f5e9/2e7d32?text=CrispyAir+Deluxe+Fryer" alt="CrispyAir Deluxe Fryer">
+                    <img src="/multikitchentrading/uploads/images/2.jpeg" alt="CrispyAir Deluxe Fryer">
                     <div class="product-info">
                         <h3>CrispyAir Deluxe Fryer</h3>
                         <p class="product-price">$129.00</p>
-                        <a href="#" class="btn">View Details</a>
+                        <a href="${pageContext.request.contextPath}/products" class="btn">View Details</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <img src="https://via.placeholder.com/300x200/e8f5e9/2e7d32?text=SmokyGrill+Master+2000" alt="SmokyGrill Master 2000">
+                    <img src="/multikitchentrading/uploads/images/3.jpeg" alt="SmokyGrill Master 2000">
                     <div class="product-info">
                         <h3>SmokyGrill Master 2000</h3>
                         <p class="product-price">$249.50</p>
-                        <a href="#" class="btn">View Details</a>
+                        <a href="product-detail.html" class="btn">View Details</a>
                     </div>
                 </div>
                 <div class="product-card">
-                    <img src="https://via.placeholder.com/300x200/e8f5e9/2e7d32?text=PerfectFry+Deep+Fryer" alt="PerfectFry Deep Fryer">
+                    <img src="/multikitchentrading/uploads/images/4.jpeg" alt="PerfectFry Deep Fryer">
                     <div class="product-info">
                         <h3>PerfectFry Deep Fryer</h3>
                         <p class="product-price">$89.99</p>
-                        <a href="#" class="btn">View Details</a>
+                        <a href="product-detail.html" class="btn">View Details</a>
                     </div>
                 </div>
             </div>
@@ -171,8 +170,8 @@
                 </div>
                 <div class="footer-section contact-info">
                     <h4>Contact Us</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Poultry Lane, Kitchenville, USA</p>
-                    <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Sano Bharayng, Swayambhu Ring Road, Kathmandu</p>
+                    <p><i class="fas fa-phone"></i> +977 9817014931</p>
                     <p><i class="fas fa-envelope"></i> sales@multikitchentrading.com</p>
                 </div>
             </div>

@@ -62,8 +62,8 @@
                 <form action="<%= request.getContextPath() %>/profile/update" method="post" enctype="multipart/form-data">
                     <div class="profile-image-container">
                         <img id="profileImagePreview" 
-                             src="<%= user.getProfileImage() == null || user.getProfileImage().isEmpty() ? 
-                                   "/assets/images/default-profile.jpg" : user.getProfileImage() %>" 
+                             src="<%= user.getImagePath() == null || user.getImagePath().isEmpty() ? 
+                                   "/assets/images/default-profile.jpg" : "/multikitchentrading/"+user.getImagePath() %>" 
                              alt="Profile Picture" class="profile-image-preview"
                              onclick="document.getElementById('profileImage').click()">
                         <input type="file" id="profileImage" name="profileImage" accept="image/*" 

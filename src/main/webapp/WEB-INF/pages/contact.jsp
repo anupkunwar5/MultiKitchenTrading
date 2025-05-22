@@ -329,12 +329,12 @@
 
     <main>
         <!-- CONTACT US HERO SECTION -->
-        <section class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://via.placeholder.com/1600x450/ffc107/2c3e50?text=Get+In+Touch'); min-height: 35vh;">
-            <div class="hero-content">
-                <h1>Contact Us</h1>
-                <p>We're here to help with all your chicken appliance needs!</p>
-            </div>
-        </section>
+		 <section class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/multikitchentrading/uploads/images/homepage.jpg'); min-height: 35vh;">
+		    <div class="hero-content">
+		        <h1>Contact Us</h1>
+		        <p>We're here to help with all your chicken appliance needs!</p>
+		    </div>
+		</section>
 
         <!-- CONTACT DETAILS & FORM SECTION -->
         <section class="featured-section" style="background-color: var(--primary-pale);">
@@ -344,8 +344,8 @@
                 <div class="contact-grid">
                     <div class="contact-info-section">
                         <h3>Our Contact Information</h3>
-                        <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong><br>123 Poultry Lane, Kitchenville, CH 1CK3N, USA</p>
-                        <p><i class="fas fa-phone"></i> <strong>Phone:</strong><br><a href="tel:+1234567890">+1 234 567 890</a> (Mon-Fri, 9am-5pm)</p>
+                        <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong><br>Sano Bharayng, Swayambhu Ring Road, Kathmandu</p>
+                        <p><i class="fas fa-phone"></i> <strong>Phone:</strong><br><a href="tel:+1234567890">+977 9817014931</a> (Mon-Fri, 9am-5pm)</p>
                         <p><i class="fas fa-envelope"></i> <strong>Email:</strong><br><a href="mailto:sales@multikitchentrading.com">sales@multikitchentrading.com</a></p>
                         <p><i class="fas fa-headset"></i> <strong>Support:</strong><br><a href="mailto:support@multikitchentrading.com">support@multikitchentrading.com</a></p>
                         
@@ -415,8 +415,8 @@
                 </div>
                 <div class="footer-section contact-info">
                     <h4>Contact Us</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Poultry Lane, Kitchenville, USA</p>
-                    <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Sano Bharayng, Swayambhu Ring Road, Kathmandu</p>
+                    <p><i class="fas fa-phone"></i> +977 9817014931</p>
                     <p><i class="fas fa-envelope"></i> sales@multikitchentrading.com</p>
                 </div>
             </div>
